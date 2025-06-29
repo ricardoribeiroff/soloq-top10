@@ -4,8 +4,6 @@ ETL que coleta o top 10 da Solo Queue de League of Legends brasileira e retorna 
 
 A coleta é feita nos elos Desafiante, Grão-Mestre e Mestre.
 
-O arquivo run_script.bat pode ser utilizado para configurar uma automação no Agendador de Tarefas do Windows.
-
 ## Tecnologias utilizadas
 - Pandas
 - SQLAlchemy
