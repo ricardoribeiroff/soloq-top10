@@ -1,7 +1,7 @@
 import pandas as pd
 import time
 from sqlalchemy import create_engine
-from services.get_data import buscar_nome_invocador, coletar_top_n_players, data_hora_atual
+from services.get_data import buscar_nome_invocador
 
 # Lógica da transformação de dados
 
