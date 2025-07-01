@@ -55,6 +55,51 @@ Os dados são extraídos, transformados e armazenados automaticamente em um banc
 ```text
 riot_data_YYYYMMDD_HHMMSS.db
 ```
+---
+
+## 🖥️ Agendamento de Tarefa no Windows (com `run_script.bat`)
+
+Você pode automatizar a coleta de dados criando uma tarefa agendada no Windows usando o arquivo `run_script.bat`:
+
+### 📄 Exemplo de conteúdo do `run_script.bat`
+
+```bat
+@echo off
+REM --------------------------------------------------------
+REM Script para ativar o ambiente virtual e executar o script Python
+REM --------------------------------------------------------
+
+REM === PASSO 1: Ativar o ambiente virtual ===
+REM Substitua pelo caminho real do seu ambiente virtual
+call C:\CAMINHO\PARA\SUA\venv\Scripts\activate.bat
+
+REM === PASSO 2: Ir até a pasta do projeto ===
+cd /d C:\CAMINHO\PARA\SEU\PROJETO
+
+REM === PASSO 3: Executar o script desejado ===
+python main.py
+
+REM === PASSO 4: (Opcional) Manter a janela aberta após execução
+pause
+```
+
+### 🛠️ Como agendar no Windows
+
+1. Abra o **Agendador de Tarefas** (`taskschd.msc`)
+2. Clique em **Criar Tarefa...**
+3. Na aba **Geral**:
+   - Dê um nome como: `Atualizar TOP 10 Solo Queue`
+   - Marque "Executar com privilégios mais altos"
+4. Na aba **Disparadores** (_Triggers_):
+   - Adicione um novo disparador: diariamente, ou no horário que preferir
+5. Na aba **Ações**:
+   - Ação: Iniciar um programa
+   - Programa/script: `run_script.bat` (coloque o caminho completo)
+6. Na aba **Condições** e **Configurações**, ajuste conforme necessário
+
+> ✅ Certifique-se de que o caminho no `.bat` esteja correto com seu ambiente e pastas locais.
+
+Pronto! Agora sua coleta será executada automaticamente nos horários definidos.
 
 ---
 
